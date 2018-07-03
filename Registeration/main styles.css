@@ -1,0 +1,75 @@
+* {
+    direction: rtl;
+}
+
+label {
+    display: none;
+}
+
+input[type=text], input[type=password], .radio-label {
+    box-sizing: border-box;
+    font-family: B Roya;
+    font-size: 2vw;
+    width: 30%;
+    padding: 1vw;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+#pcal1 {
+    width: calc(30% - 18px);
+}
+
+.radio-label {
+    min-width: 30%;
+    width: auto;
+}
+
+legend {
+    font-family: B Roya;
+    font-size: 1.9vw;
+    font-weight: bold;
+}
+
+fieldset {
+    margin: 3vw;
+}
+
+#add-degree {
+    background-image: url("Add.svg");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+    border: none;
+    width: 3vw;
+    height: 3vw;
+    margin: 10px;
+    opacity: 1;
+}
+
+#add-degree:hover {
+    opacity: 0.6;
+}
+
+#add-degree:active {
+    opacity: 1;
+}
+
+#add-degree:focus {
+    outline: 0;
+}
+
+#remove-degree {
+    background-image: url("Remove.svg");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+    border: none;
+    width: 3vw;
+    height: 3vw;
+    //margin: 5px;
+}
