@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" href="main styles.css">
+    <link rel="stylesheet" href="../Date Picker/js-persian-cal.css">
+    <script type="text/javascript" src="../Date Picker/js-persian-cal.min.js"></script>
+</head>
+<body>
+    
+	<div class="container">
+        
+            <!--Personal Information-->
+            <fieldset>
+                <legend>مشخصات فردی</legend>
+                
+                <label for="first-name">نام:</label>
+                <input name="first-name" type="text" placeholder="نام" required>
+
+                <label for="last-name">نام خانوادگی:</label>
+                <input name="last-name" type="text" placeholder="نام خانوادگی" required>
+
+                <label class="radio-label" for="gender">جنسیت:
+                <input name="gender" type="radio" value="male" required>مرد
+                <input name="gender" type="radio" value="female" required>زن<br></label>
+
+                <label for="father-name">نام پدر:</label>
+                <input name="father-name" type="text" placeholder="نام پدر" required>
+
+                <label for="birth-date">تاریخ تولد:</label>
+                <input id="pcal1" name="birth-date" type="text" class="pdate" placeholder="تاریخ تولد --/--/--13"  required>
+                
+                <label for="birth-place">محل تولد:</label>
+                <input name="birth-place" type="text" placeholder="محل تولد" required>
+
+                <!--label for="issue-place">محل صدور:</label>
+                <input name="issue-place" type="text" placeholder="محل صدور" required-->
+
+                <label for="national-id">کد ملی:</label>
+                <input name="national-id" type="text" placeholder="کد ملی" required>
+
+                <label for="birth-certificate">شماره شناسنامه:</label>
+                <input name="birth-certificate" type="text" placeholder="شماره شناسنامه" required>
+
+                <label for="religion">دین:</label>
+                <select name="religion">
+                    <option label="" hidden>دین</option>
+                    <option value="Islam">اسلام</option>
+                    <option value="christianity">مسحیت</option>
+                    <option value="zoroast">زرتشتی</option>
+                    <option value="zoroast">سایر</option>
+                </select>
+
+                <label for="religion-branch">مذهب:</label>
+                <select name="religion-branch">
+                    <option value="" hidden>مذهب</option>
+                    <option value="shia">شیعه</option>
+                    <option value="sunni">سنی</option>
+                    <option value="sunni">سایر</option>
+
+                </select>
+
+                <label for="phone">تلفن ثابت:</label>
+                <input id="bar" name="phone" type="text" placeholder="تلفن ثابت  12345678 (021)" required onkeydown="javascript:backspacerDOWN(this, event);" onkeyup="javascript:backspacerUP(this, event);">
+
+                <label for="mobile">موبایل:</label>
+                <input name="mobile" type="text" placeholder="موبایل  09123456789" required>
+
+                <label for="email">ایمیل:</label>
+                <input name="email" type="email" placeholder="email@example.com" required>
+
+                <label for="province">استان:</label>
+                <input id="province" name="province" type="text" class="autocomplete" placeholder="استان" required>
+
+                <label for="city">شهر:</label>
+                <input name="city" list="city" placeholder="شهر" required>
+                <datalist id="city"></datalist>
+
+                <label for="address">نشانی:</label>
+                <input name="address" type="text" placeholder="نشانی" required>
+
+                <label for="work-address">نشانی محل کار:</label>
+                <input name="work-address" type="text" placeholder="نشانی محل کار" >
+                
+                <label for="essential-phone">تلفن ضروری:</label>
+                <input name="essential-phone" type="text" placeholder="تلفن ضروری" required>
+
+            </fieldset>
+            
+            <!--Degree of Education-->
+            <fieldset>
+                <legend>مدرک تحصیلی</legend>
+
+                <label for="degree">مدرک تحصیلی:</label>
+                <input name="degree" type="text" placeholder="مدرک تحصیلی" required>
+
+                <label for="field">رشته:</label>
+                <input name="field" type="text" placeholder=" رشته تحصیلی" required>
+
+                <label for="university">محل تحصیل:</label>
+                <input name="university" type="text" placeholder="محل تحصیل" required>
+
+                <label for="graduation-date">تاریخ اخذ مدرک:</label>
+                <input name="graduation-date" type="text" placeholder="تاریخ اخذ مدرک">
+                
+                <button id="add-degree" name="add-degree"></button>
+                <button id="remove-degree" name="remove-degree"></button>
+                
+            </fieldset>
+            
+            <!--Passed Courses and Certificates-->
+            <fieldset>
+                <legend>دوره های گذرانده و گواهینامه ها</legend>
+
+                <label for="passed-course-title">عنوان دوره:</label>
+                <input name="passed-course-title" type="text" placeholder="عنوان دوره">
+
+                <label for="passed-course-location">شهر و محل برگزاری:</label>
+                <input name="passed-course-location" type="text" placeholder="شهر و محل برگزاری">
+
+                <label for="passed-course-duration">مدت (ساعت):</label>
+                <input name="passed-course-duration" type="text" placeholder="مدت دوره">
+
+                <!--label for="passed-course-start">تاریخ شروع:</label>
+                <input name="passed-course-start" type="text" placeholder="تاریخ شروع"-->
+
+                <!--label for="passed-course-finish">تاریخ پایان:</label>
+                <input name="passed-course-finish" type="text" placeholder="تاریخ پایان"-->
+
+            </fieldset>
+        
+            <!--Employment-->
+            <fieldset>
+                <legend>اطلاعات شغلی</legend>
+                
+                <label class="radio-label" for="science-Committee">آیا عضو هیئت علمی هستید؟
+                <input name="science Committee" type="radio" value="yes">بله
+                <input name="science Committee" type="radio" value="no">خیر<br></label>
+
+                <label for="university-type">نوع دانشگاه/موسسه:</label>
+                <input name="university-type" type="text" placeholder="نوع دانشگاه/موسسه">
+
+                <label for="employment-university">دانشگاه:</label>
+                <input name="employment-university" type="text" placeholder="دانشگاه">
+
+                <label for="academic-rank">رتبه علمی:</label>
+                <input name="academic-rank" type="text" placeholder="رتبه علمی">
+
+            </fieldset>
+            
+            <!--Taught History-->
+            <fieldset>
+                <legend>سوابق تدریس</legend>
+                
+                <label for="taught-title">عنوان دوره:</label>
+                <input name="taught-title" type="text" placeholder="عنوان دوره">
+
+                <label for="taught-location">محل تدریس:</label>
+                <input name="taught-location" type="text" placeholder="محل تدریس">
+
+                <label for="taught-grade">مقطع تحصیلی:</label>
+                <input name="taught-grade" type="text" placeholder="مقطع تحصیلی">
+
+                <label for="taught-year">سال تحصیلی:</label>
+                <input name="taught-year" type="text" placeholder="سال تحصیلی">
+
+                <label for="taught-duration">مدت:</label>
+                <input name="taught-duration" type="text" placeholder="مدت (ساعت)">
+
+                <label for="taught-start">شروع:</label>
+                <input name="taught-start" type="text" placeholder="شروع">
+
+                <label for="taught-finish">پایان:</label>
+                <input name="taught-finish" type="text" placeholder="پایان">
+
+            </fieldset>
+            
+            <!--Taught Request-->
+            <fieldset>
+                <legend>درخواست تدریس</legend>
+                
+                <label for="taught-request-group">گروه:</label>
+                <input name="taught-request-group" type="text" placeholder="گروه (کامپیوتر، زبان، انسانی ...)">
+
+                <label for="taught-request-title">عنوان دوره:</label>
+                <input name="taught-request-title" type="text" placeholder="عنوان دوره">
+
+            </fieldset>
+            
+            <!--Executive History-->
+            <fieldset>
+                <legend>سوابق اجرایی</legend>
+                
+                <label for="service-location">محل خدمت:</label>
+                <input name="service-location" type="text" placeholder="محل خدمت">
+
+                <label for="service-type">نوع فعالیت:</label>
+                <input name="service-type" type="text" placeholder="نوع فعالیت">
+
+                <label for="post">مسئولیت:</label>
+                <input name="post" type="text" placeholder="مسئولیت">
+
+                <label for="service-start">تاریخ شروع:</label>
+                <input name="service-start" type="text" placeholder="تاریخ شروع">
+
+                <label for="service-finish">تاریخ پایان:</label>
+                <input name="service-finish" type="text" placeholder="تاریخ پایان">
+
+            </fieldset>
+            
+            <!--Recommender-->
+            <fieldset>
+                <legend>معرف</legend>
+                
+                <label for="recommender-name">نام و نام خانوادگی معرف:</label>
+                <input name="recommender-name" type="text" placeholder="نام و نام خانوادگی معرف">
+
+                <label for="recommender-workplace">محل خدمت:</label>
+                <input name="recommender-workplace" type="text" placeholder="محل خدمت">
+
+                <label for="recommender-phone">تلفن:</label>
+                <input name="recommender-phone" type="text" placeholder="تلفن">
+
+                <label for="recommender-address">نشانی:</label>
+                <input name="recommender-address" type="text" placeholder="نشانی">
+
+            </fieldset>
+            
+            <!--Bank Account Info-->
+            <fieldset>
+                <legend>اطلاعات حساب بانکی (بانک تجارت)</legend>
+                
+                <label for="account-number">شماره حساب:</label>
+                <input name="account-number" type="text" placeholder="شماره حساب" required>
+                
+                <label for="card-number">شماره کارت:</label>
+                <input name="card-number" type="text" placeholder="شماره کارت">
+            </fieldset>
+
+            <label for="descriptions">توضیحات:</label>
+            <textarea name="descriptions" rows="5" cols="100%" placeholder="توضیحات ..."></textarea>
+
+            <label for="documents">مدارک:</label>
+            <input name="documents" type="file">
+            <input type="submit" value="submit">
+            <input type="reset" value="reset">
+
+	</div>
+    
+    <script type="text/javascript">
+        var objcal1= new AMIB.persianCalendar('pcal1');
+    </script>
+</body>
+</html>
